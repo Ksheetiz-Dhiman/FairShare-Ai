@@ -1,77 +1,173 @@
-# 🌌 FairShare AI: Full-Stack Expense Share Tracker
+# 💸 FairShare AI
 
-Welcome to **FairShare AI**—a full-stack expense sharing, bill splitting, and debt optimization ledger powered by Gemini Intelligence.
+> A full-stack AI-powered expense sharing, bill splitting, and debt optimization app — built with React, Express, and LLaMA 3.3 via Groq.
 
----
-
-## 🔥 Key Technical Superpowers
-
-1. **Intelligent NLP Bill Parsing (`Gemini-3.5-flash`)**: Type naturally (e.g., *"Priya paid €90 for dinner last night, split equally between her, me, and Rahul"*). The system automatically maps participants, processes amounts, and configures matching split rows instantly.
-2. **Dual-Mode OCR Receipt Scanner**: Drag and drop or upload receipts. Gemini Vision reads and converts receipt coordinates, pre-filling totals, line items, and merchant notes.
-3. **Co-Pilot Financial Analyst**: A conversational companion integrated into the group workspace, allowing you to ask, *"Who spent the most overall?"* or *"Summarize our bills in a category bullet list."*
-4. **Optimal Debt Minimization (Greedy Settlement Algorithm)**: Automatically simplifies group transaction graphs to minimize the raw payment counts—consolidating multi-currency balances directly.
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react) ![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=flat&logo=vite) ![Node](https://img.shields.io/badge/Node.js-18+-339933?style=flat&logo=node.js) ![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?style=flat&logo=typescript) ![TailwindCSS](https://img.shields.io/badge/Tailwind-v4-38BDF8?style=flat&logo=tailwindcss) ![Groq](https://img.shields.io/badge/Groq-LLaMA_3.3_70B-F55036?style=flat)
 
 ---
 
-## 🛠️ The Tech Stack
+## ✨ Features
 
-- **Frontend**: React (v19) + Vite + Tailwind CSS (v4)
-- **Icons & Micro-interactions**: Lucide React
-- **Backend Services**: Node.js + Express (v4)
-- **Database Engine**: Persistent Relational JSON Store (easily adaptable to PostgreSQL/Drizzle) + Built-in automatic seed loaders
-- **Authentication**: JWT state controls + Cryptographically salted pass-hashes
+- **🧠 NLP Bill Parsing** — Type expenses naturally (e.g. *"Priya paid ₹900 for dinner, split equally between her, me, and Rahul"*) and LLaMA auto-fills everything
+- **🤖 AI Co-Pilot Chat** — Ask your group workspace anything: *"Who spent the most?"*, *"Summarize bills by category"*
+- **⚖️ Optimal Debt Minimization** — Greedy settlement algorithm reduces the number of transactions needed to settle all debts
+- **📊 Spending Trend Charts** — Visual breakdowns of group spending over time
+- **🔔 Real-time Notifications** — WebSocket-powered live updates across group members
+- **🔐 Auth System** — JWT-based authentication with cryptographically salted password hashes
+- **🌍 Multi-currency Support** — Track expenses across different currencies
+- **📄 PDF Export** — Export group expense reports as PDF
+
+> **Note:** Receipt OCR scanning is not supported with Groq/LLaMA (vision input not available). The feature returns an empty fallback — you can swap in a vision-capable model if needed.
 
 ---
 
-## 🚀 Quick Start Instructions
+## 🛠️ Tech Stack
 
-This application is ready to run right out of the box in the AI Studio environment or your local workspace.
+| Layer | Technology |
+|---|---|
+| Frontend | React 19, Vite 6, Tailwind CSS v4 |
+| Backend | Node.js, Express v4, TypeScript |
+| AI | Groq API — `llama-3.3-70b-versatile` |
+| Real-time | WebSockets (`ws`) |
+| Database | JSON file store (swappable with Supabase/PostgreSQL) |
+| Auth | JWT + salted password hashes |
+| PDF Export | jsPDF |
+| Charts | Recharts |
+| Animations | Motion |
 
-### 1. Requirements
-Ensure you have Node.js 18+ and NPM installed.
+---
 
-### 2. Configure Environment Secrets
-Create a `.env` file in the root directory (using `.env.example` as a template):
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+- A free [Groq API key](https://console.groq.com/keys) (14,400 req/day free tier)
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/Ksheetiz-Dhiman/fairshare-ai.git
+cd fairshare-ai
+```
+
+### 2. Set up environment variables
+
+```bash
+cp .env.example .env
+```
+
+Edit `.env`:
+
 ```env
 PORT=3000
-JWT_SECRET=super_secret_session_key_fairshare_ai_2026
-GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
+JWT_SECRET=your_super_secret_key_here
+GROQ_API_KEY=your_groq_api_key_here
+APP_URL=http://localhost:3000/
 ```
 
-### 3. Bootstrap and Start Dev Server
-```bash
-# Install required dependencies
-npm install
+> Supabase keys are optional — the app uses a local JSON store by default.
 
-# Start the full-stack server
+### 3. Install and run
+
+```bash
+npm install
 npm run dev
 ```
-Open your browser to `http://localhost:3000` to interact with the application!
 
-### 4. Direct Demo Access (Fast-Bypass)
-On the registration/login page, select **"🚀 Skip to Demo Account"** to immediately log in as **Alex Mercer** (`alex@example.com` / `password`). The workspace is pre-seeded with beautiful sample data (e.g., *"Trip to Florence"*, with 3 active participants, currencies, and multiple bills) so you can test features without manual typing!
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### 4. Try the demo account
+
+On the login page, click **"🚀 Skip to Demo Account"** to instantly log in as **Alex Mercer** with pre-seeded sample data (Trip to Florence, multiple participants, currencies, and bills).
 
 ---
 
-## 🐳 Running with Docker
+## 🐳 Docker
 
-Spin up a local PostgreSQL instance and the Node app server automatically using Docker Compose:
+Run with Docker Compose (includes a PostgreSQL instance):
 
 ```bash
 docker-compose up --build
 ```
-This mounts PostgreSQL on port `5432` and opens the FairShare AI client on port `3000` with hot-reload capabilities.
+
+This spins up:
+- PostgreSQL on port `5432`
+- FairShare AI app on port `3000`
 
 ---
 
-## 📁 System Module Map
+## 📦 Scripts
 
-- `/server.ts` - Core Express JSON API Gateway, middlewares, and server assets.
-- `/src/App.tsx` - Fully integrated React client routing engine.
-- `/src/types.ts` - Shared entity types keeping TS compilers green.
-- `/src/db/dbStore.ts` - Persistence engine with instant mock-data loads.
-- `/src/components/AIParseInput.tsx` - Text parsing component calling Gemini text models.
-- `/src/components/ReceiptUploader.tsx` - Image scanning component calling Gemini Vision models.
-- `/src/components/InsightsChat.tsx` - Group assistant chat widget.
-- `/src/components/BalanceCard.tsx` - Ledger visualizer mapping debtor balances.
-- `/src/components/DebtGraph.tsx` - Splitwise-inspired optimized transaction arrows.
+| Command | Description |
+|---|---|
+| `npm run dev` | Start full-stack dev server |
+| `npm run build` | Build frontend + bundle server for production |
+| `npm start` | Run the production build |
+| `npm run lint` | TypeScript type-check |
+| `npm run clean` | Remove `dist/` and `database.json` |
+
+---
+
+## 📁 Project Structure
+
+```
+fairshare-ai/
+├── server.ts                  # Express API server + WebSocket handler
+├── src/
+│   ├── App.tsx                # React app + client-side routing
+│   ├── types.ts               # Shared TypeScript types
+│   ├── db/
+│   │   └── dbStore.ts         # JSON persistence engine
+│   ├── lib/
+│   │   ├── gemini.ts          # AI integrations via Groq (parseExpense, insights)
+│   │   ├── authCrypto.ts      # JWT + password hashing
+│   │   ├── debtSim.ts         # Debt minimization algorithm
+│   │   └── pdfExport.ts       # PDF report generation
+│   └── components/
+│       ├── AIParseInput.tsx   # NLP expense input
+│       ├── ReceiptUploader.tsx# Receipt scanner (text fallback)
+│       ├── InsightsChat.tsx   # AI chat co-pilot
+│       ├── BalanceCard.tsx    # Balance ledger UI
+│       ├── DebtGraph.tsx      # Debt graph visualizer
+│       ├── GroupChat.tsx      # Group messaging
+│       └── SpendingTrendChart.tsx
+├── supabase_setup.sql         # Schema for Supabase/PostgreSQL migration
+├── docker-compose.yml
+├── vite.config.ts
+└── .env.example
+```
+
+---
+
+## ☁️ Deployment
+
+This app runs as a **single persistent Node.js server** (Express + WebSockets), so it's best deployed on platforms that support long-running processes:
+
+**Recommended: [Railway](https://railway.app)**
+1. Connect your GitHub repo
+2. Add environment variables (`GROQ_API_KEY`, `JWT_SECRET`, etc.)
+3. Railway auto-detects `npm run build` + `npm start` — done ✅
+
+**Vercel** requires refactoring WebSockets into serverless functions — not recommended without code changes.
+
+---
+
+## 🔑 Environment Variables
+
+| Variable | Required | Description |
+|---|---|---|
+| `GROQ_API_KEY` | ✅ Yes | Groq API key (get one free at console.groq.com) |
+| `JWT_SECRET` | ✅ Yes | Secret for signing JWT tokens |
+| `PORT` | No | Server port (default: 3000) |
+| `APP_URL` | No | Hosted URL (for self-referential links) |
+| `SUPABASE_URL` | No | Supabase project URL (optional cloud DB) |
+| `SUPABASE_ANON_KEY` | No | Supabase anon key |
+| `SUPABASE_SERVICE_ROLE_KEY` | No | Supabase service role key |
+
+---
+
+## 📄 License
+
+MIT © [Ksheetiz Dhiman](https://github.com/Ksheetiz-Dhiman)
