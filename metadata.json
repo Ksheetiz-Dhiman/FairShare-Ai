@@ -1,0 +1,6 @@
+{
+  "name": "FairShare AI",
+  "description": "Full-stack expense parting, bill sharing, and debt simplification tracker powered by Gemini.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

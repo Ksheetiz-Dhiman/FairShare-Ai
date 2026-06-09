@@ -1,0 +1,538 @@
+{
+  "users": [
+    {
+      "id": "u-alex",
+      "name": "Alex Mercer",
+      "email": "alex@example.com",
+      "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&q=80",
+      "password_hash": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
+      "created_at": "2026-01-01T10:00:00.000Z"
+    },
+    {
+      "id": "u-rahul",
+      "name": "Rahul Sharma",
+      "email": "rahul@example.com",
+      "avatar_url": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=120&q=80",
+      "password_hash": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
+      "created_at": "2026-01-02T11:00:00.000Z"
+    },
+    {
+      "id": "u-priya",
+      "name": "Priya Patel",
+      "email": "priya@example.com",
+      "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80",
+      "password_hash": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
+      "created_at": "2026-01-03T12:00:00.000Z"
+    },
+    {
+      "id": "u-qj6a0wx3a",
+      "name": "ADMIN",
+      "email": "adminksheetiz@gmail.com",
+      "avatar_url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&h=120&q=80",
+      "password_hash": "3d691b61f4c6f65534a0a0cda65ed91508b24d9f7e3aad365917d163c3f2004b",
+      "created_at": "2026-06-09T12:33:01.385Z"
+    }
+  ],
+  "groups": [
+    {
+      "id": "g-europe",
+      "name": "Europe Trip 2026",
+      "description": "Paris, Rome and Amsterdam grand backpacking tour!",
+      "currency": "EUR",
+      "created_by": "u-alex",
+      "created_at": "2026-05-15T09:00:00.000Z"
+    },
+    {
+      "id": "g-6ooedobx8",
+      "name": "cockroach",
+      "description": "",
+      "currency": "INR",
+      "created_by": "u-qj6a0wx3a",
+      "created_at": "2026-06-09T12:34:04.070Z"
+    }
+  ],
+  "group_members": [
+    {
+      "id": "gm-1",
+      "group_id": "g-europe",
+      "user_id": "u-alex",
+      "role": "owner",
+      "joined_at": "2026-05-15T09:00:00.000Z"
+    },
+    {
+      "id": "gm-2",
+      "group_id": "g-europe",
+      "user_id": "u-rahul",
+      "role": "member",
+      "joined_at": "2026-05-15T10:00:00.000Z"
+    },
+    {
+      "id": "gm-3",
+      "group_id": "g-europe",
+      "user_id": "u-priya",
+      "role": "member",
+      "joined_at": "2026-05-15T11:00:00.000Z"
+    },
+    {
+      "id": "gm-n06t0x22t",
+      "group_id": "g-6ooedobx8",
+      "user_id": "u-qj6a0wx3a",
+      "role": "owner",
+      "joined_at": "2026-06-09T12:34:04.070Z"
+    }
+  ],
+  "expenses": [
+    {
+      "id": "e-1",
+      "group_id": "g-europe",
+      "title": "Paris Flight Tickets",
+      "amount": 1200,
+      "currency": "EUR",
+      "exchange_rate": 1,
+      "paid_by_user_id": "u-alex",
+      "split_type": "equal",
+      "category": "Travel",
+      "date": "2026-05-20",
+      "notes": "Group tickets booked early",
+      "created_by": "u-alex",
+      "created_at": "2026-05-20T14:30:00.000Z"
+    },
+    {
+      "id": "e-2",
+      "group_id": "g-europe",
+      "title": "Rome Villa Booking",
+      "amount": 900,
+      "currency": "EUR",
+      "exchange_rate": 1,
+      "paid_by_user_id": "u-priya",
+      "split_type": "equal",
+      "category": "Utilities",
+      "date": "2026-05-22",
+      "notes": "Beautiful airbnb in Trastevere!",
+      "created_by": "u-priya",
+      "created_at": "2026-05-22T18:15:00.000Z"
+    },
+    {
+      "id": "e-3",
+      "group_id": "g-europe",
+      "title": "Grand Dinner at Trattoria",
+      "amount": 150,
+      "currency": "EUR",
+      "exchange_rate": 1,
+      "paid_by_user_id": "u-rahul",
+      "split_type": "percentage",
+      "category": "Food",
+      "date": "2026-05-23",
+      "notes": "Alex had 30%, Rahul had 40%, Priya had 30%",
+      "created_by": "u-rahul",
+      "created_at": "2026-05-23T21:40:00.000Z"
+    },
+    {
+      "id": "e-4",
+      "group_id": "g-europe",
+      "title": "Train Rome to Venice",
+      "amount": 90,
+      "currency": "EUR",
+      "exchange_rate": 1,
+      "paid_by_user_id": "u-alex",
+      "split_type": "equal",
+      "category": "Travel",
+      "date": "2026-05-24",
+      "notes": "High speed trenitalia seats",
+      "created_by": "u-alex",
+      "created_at": "2026-05-24T08:00:00.000Z"
+    },
+    {
+      "id": "e-5",
+      "group_id": "g-europe",
+      "title": "Venice Gelato Treat",
+      "amount": 18,
+      "currency": "EUR",
+      "exchange_rate": 1,
+      "paid_by_user_id": "u-rahul",
+      "split_type": "equal",
+      "category": "Food",
+      "date": "2026-05-25",
+      "notes": "Amazing pistachio and hazelnut gelato!",
+      "created_by": "u-rahul",
+      "created_at": "2026-05-25T16:20:00.000Z"
+    },
+    {
+      "id": "e-6",
+      "group_id": "g-europe",
+      "title": "Louvre Museum Tickets",
+      "amount": 60,
+      "currency": "EUR",
+      "exchange_rate": 1,
+      "paid_by_user_id": "u-priya",
+      "split_type": "equal",
+      "category": "Entertainment",
+      "date": "2026-05-26",
+      "notes": "Pre-booked online slots",
+      "created_by": "u-priya",
+      "created_at": "2026-05-26T10:10:00.000Z"
+    },
+    {
+      "id": "e-7",
+      "group_id": "g-europe",
+      "title": "Uber Rides around Paris",
+      "amount": 45,
+      "currency": "EUR",
+      "exchange_rate": 1,
+      "paid_by_user_id": "u-alex",
+      "split_type": "equal",
+      "category": "Travel",
+      "date": "2026-05-27",
+      "notes": "Late night taxi back to lodge",
+      "created_by": "u-alex",
+      "created_at": "2026-05-27T23:50:00.000Z"
+    },
+    {
+      "id": "e-8",
+      "group_id": "g-europe",
+      "title": "Amsterdam Canal Dinner",
+      "amount": 120,
+      "currency": "EUR",
+      "exchange_rate": 1,
+      "paid_by_user_id": "u-priya",
+      "split_type": "equal",
+      "category": "Food",
+      "date": "2026-05-29",
+      "notes": "Splendid boat tour with pancakes",
+      "created_by": "u-priya",
+      "created_at": "2026-05-29T19:30:00.000Z"
+    },
+    {
+      "id": "e-9",
+      "group_id": "g-europe",
+      "title": "Gift Souvenirs",
+      "amount": 75,
+      "currency": "EUR",
+      "exchange_rate": 1,
+      "paid_by_user_id": "u-rahul",
+      "split_type": "equal",
+      "category": "Shopping",
+      "date": "2026-05-30",
+      "notes": "Fridge magnets, keychains and miniature towers",
+      "created_by": "u-rahul",
+      "created_at": "2026-05-30T17:45:00.000Z"
+    },
+    {
+      "id": "e-10",
+      "group_id": "g-europe",
+      "title": "Supermarket Snacks & Drinks",
+      "amount": 36,
+      "currency": "EUR",
+      "exchange_rate": 1,
+      "paid_by_user_id": "u-alex",
+      "split_type": "equal",
+      "category": "Utilities",
+      "date": "2026-06-02",
+      "notes": "Baguettes, cheese, chips, and sodas",
+      "created_by": "u-alex",
+      "created_at": "2026-06-02T12:00:00.000Z"
+    },
+    {
+      "id": "e-l2c79nuwe",
+      "group_id": "g-6ooedobx8",
+      "title": "HnM",
+      "amount": 1200,
+      "currency": "INR",
+      "exchange_rate": 1,
+      "paid_by_user_id": "u-qj6a0wx3a",
+      "split_type": "equal",
+      "category": "Shopping",
+      "date": "2026-06-09",
+      "notes": "",
+      "receipt_url": "",
+      "created_by": "u-qj6a0wx3a",
+      "created_at": "2026-06-09T13:15:12.756Z"
+    }
+  ],
+  "expense_splits": [
+    {
+      "id": "es-1-u-alex",
+      "expense_id": "e-1",
+      "user_id": "u-alex",
+      "amount": 400,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-1-u-rahul",
+      "expense_id": "e-1",
+      "user_id": "u-rahul",
+      "amount": 400,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-1-u-priya",
+      "expense_id": "e-1",
+      "user_id": "u-priya",
+      "amount": 400,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-2-u-alex",
+      "expense_id": "e-2",
+      "user_id": "u-alex",
+      "amount": 300,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-2-u-rahul",
+      "expense_id": "e-2",
+      "user_id": "u-rahul",
+      "amount": 300,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-2-u-priya",
+      "expense_id": "e-2",
+      "user_id": "u-priya",
+      "amount": 300,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-3-alex",
+      "expense_id": "e-3",
+      "user_id": "u-alex",
+      "amount": 45,
+      "percentage": 30,
+      "settled": false
+    },
+    {
+      "id": "es-3-rahul",
+      "expense_id": "e-3",
+      "user_id": "u-rahul",
+      "amount": 60,
+      "percentage": 40,
+      "settled": false
+    },
+    {
+      "id": "es-3-priya",
+      "expense_id": "e-3",
+      "user_id": "u-priya",
+      "amount": 45,
+      "percentage": 30,
+      "settled": false
+    },
+    {
+      "id": "es-4-u-alex",
+      "expense_id": "e-4",
+      "user_id": "u-alex",
+      "amount": 30,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-4-u-rahul",
+      "expense_id": "e-4",
+      "user_id": "u-rahul",
+      "amount": 30,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-4-u-priya",
+      "expense_id": "e-4",
+      "user_id": "u-priya",
+      "amount": 30,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-5-u-alex",
+      "expense_id": "e-5",
+      "user_id": "u-alex",
+      "amount": 6,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-5-u-rahul",
+      "expense_id": "e-5",
+      "user_id": "u-rahul",
+      "amount": 6,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-5-u-priya",
+      "expense_id": "e-5",
+      "user_id": "u-priya",
+      "amount": 6,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-6-u-alex",
+      "expense_id": "e-6",
+      "user_id": "u-alex",
+      "amount": 20,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-6-u-rahul",
+      "expense_id": "e-6",
+      "user_id": "u-rahul",
+      "amount": 20,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-6-u-priya",
+      "expense_id": "e-6",
+      "user_id": "u-priya",
+      "amount": 20,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-7-u-alex",
+      "expense_id": "e-7",
+      "user_id": "u-alex",
+      "amount": 15,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-7-u-rahul",
+      "expense_id": "e-7",
+      "user_id": "u-rahul",
+      "amount": 15,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-7-u-priya",
+      "expense_id": "e-7",
+      "user_id": "u-priya",
+      "amount": 15,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-8-u-alex",
+      "expense_id": "e-8",
+      "user_id": "u-alex",
+      "amount": 40,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-8-u-rahul",
+      "expense_id": "e-8",
+      "user_id": "u-rahul",
+      "amount": 40,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-8-u-priya",
+      "expense_id": "e-8",
+      "user_id": "u-priya",
+      "amount": 40,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-9-u-alex",
+      "expense_id": "e-9",
+      "user_id": "u-alex",
+      "amount": 25,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-9-u-rahul",
+      "expense_id": "e-9",
+      "user_id": "u-rahul",
+      "amount": 25,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-9-u-priya",
+      "expense_id": "e-9",
+      "user_id": "u-priya",
+      "amount": 25,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-10-u-alex",
+      "expense_id": "e-10",
+      "user_id": "u-alex",
+      "amount": 12,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-10-u-rahul",
+      "expense_id": "e-10",
+      "user_id": "u-rahul",
+      "amount": 12,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-10-u-priya",
+      "expense_id": "e-10",
+      "user_id": "u-priya",
+      "amount": 12,
+      "percentage": 33.33,
+      "settled": false
+    },
+    {
+      "id": "es-t34skbabj",
+      "expense_id": "e-l2c79nuwe",
+      "user_id": "u-qj6a0wx3a",
+      "amount": 1200,
+      "percentage": 100,
+      "settled": false
+    }
+  ],
+  "settlements": [
+    {
+      "id": "s-1",
+      "group_id": "g-europe",
+      "from_user_id": "u-rahul",
+      "to_user_id": "u-alex",
+      "amount": 150,
+      "currency": "EUR",
+      "method": "Cash",
+      "note": "Partial settlement for flights",
+      "settled_at": "2026-05-21T18:00:00.000Z",
+      "created_at": "2026-05-21T18:00:00.000Z"
+    }
+  ],
+  "ai_conversations": [
+    {
+      "id": "aic-1",
+      "group_id": "g-europe",
+      "user_id": "u-alex",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hi! Can you give me a summary of how we are doing on spending?",
+          "timestamp": "2026-06-03T09:00:00.000Z"
+        },
+        {
+          "role": "assistant",
+          "content": "Hello Alex! Currently, the 'Europe Trip 2026' group has spent a total of **€2,544**. As a group:\n\n- **You (Alex)** have spent €1,371 and are owed money.\n- **Priya** has spent €1,080.\n- **Rahul** has spent €243 and owes the most.\n\nYour biggest category is **Travel** (€1,335) followed closely by **Accommodation** (€900). Let me know if you would like me to detail your direct balances or suggest a simplified settlement path!",
+          "timestamp": "2026-06-03T09:00:15.000Z"
+        }
+      ],
+      "created_at": "2026-06-03T09:00:00.000Z"
+    }
+  ],
+  "notifications": [],
+  "chat_messages": []
+}

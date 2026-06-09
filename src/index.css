@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --forest-ink: #163300;
+  --lime-voltage: #9fe870;
+  --spruce: #054d28;
+  --linen-mist: #e2f6d5;
+  --signal-blue: #0b4c72;
+  --alarm-red: #cb272f;
+  --charcoal: #454745;
+  --obsidian: #0e0f0c;
+  --pebble: #868685;
+  --slate: #6a6c6a;
+  --fog: #e8ebe6;
+  --paper: #ffffff;
+  --border-glass: rgba(22, 51, 0, 0.08);
+  --scrollbar-thumb: rgba(22, 51, 0, 0.15);
+}
+
+.dark {
+  --forest-ink: #f2f8f0;
+  --lime-voltage: #9fe870;
+  --spruce: #14270d;
+  --linen-mist: #16240f;
+  --signal-blue: #38bdf8;
+  --alarm-red: #ef4444;
+  --charcoal: #a3b39c;
+  --obsidian: #ffffff;
+  --pebble: #2d3c2a;
+  --slate: #7a8f75;
+  --fog: #121815;
+  --paper: #090f0c;
+  --border-glass: rgba(242, 248, 240, 0.1);
+  --scrollbar-thumb: rgba(242, 248, 240, 0.15);
+}
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-forest-ink: var(--forest-ink);
+  --color-lime-voltage: var(--lime-voltage);
+  --color-spruce: var(--spruce);
+  --color-linen-mist: var(--linen-mist);
+  --color-signal-blue: var(--signal-blue);
+  --color-alarm-red: var(--alarm-red);
+  --color-charcoal: var(--charcoal);
+  --color-obsidian: var(--obsidian);
+  --color-pebble: var(--pebble);
+  --color-slate: var(--slate);
+  --color-fog: var(--fog);
+  --color-paper: var(--paper);
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--charcoal);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Glassmorphism/Fog panel styling adapted for Wise light aesthetic */
+.glass {
+  background: var(--color-fog);
+  border: 1px solid var(--border-glass);
+}
+
+/* Brand highlight overlays */
+.ai-gradient {
+  background: var(--color-forest-ink);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom premium thin scrollbar in brand color */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-fog);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-forest-ink);
+}
+
+/* Typewriter animation indicator */
+@keyframes blink {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+.type-indicator span {
+  animation: blink 1s infinite;
+}
+.type-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.type-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
